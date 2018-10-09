@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "react-toc",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/react-toc.js",
   "scripts": {
     "watch": "cp ./src/index.html ./dist/index.html; NODE_ENV=development webpack-dev-server --open",
     "dev": "NODE_ENV=development webpack --mode development",
