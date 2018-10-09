@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import "./style.less";
 
 /*
 TODO:
@@ -34,7 +35,8 @@ class TableOfContentsContainer extends React.Component {
 
     this.state = {
       headings: this.props.tocHeadings.toLowerCase().replace(/ /g, '').split(',') || [h1,h2],
-      items: []
+      items: [],
+      buildingToc: false
     }
 
     this.buildToc = this.buildToc.bind(this);
@@ -94,7 +96,6 @@ class TableOfContentsContainer extends React.Component {
         }
 
         if (numberOfChildNodes -1 === i) {
-          isRunning = true;
           this.setState((prevState) => {
             console.log('setting items to state');
             prevState.items = tocList;
@@ -112,6 +113,7 @@ class TableOfContentsContainer extends React.Component {
     console.log(prevState.items);
     if (!this.state.items.length || this.state.items != prevState.items.length) {
       //content has changed, so rebuild TOC
+
       console.log('rebuilding TOC');
       this.buildToc();
     }
@@ -123,7 +125,9 @@ class TableOfContentsContainer extends React.Component {
     ReactDOM.render(<TableOfContents items={this.state.items} />, document.getElementById(this.props.tocList));
   }
 
-  render = () => this.props.children;
+  render() {
+    return this.props.children;
+  }
 }
 
 class Content extends React.Component {
