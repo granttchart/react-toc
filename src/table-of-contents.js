@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-const TableOfContents = (props) => {
+export const TableOfContents = (props) => {
   return (
    <ul>
       {props.items.map((item) => {

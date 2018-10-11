@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-class TableOfContentsContainer extends React.Component {
+export class TableOfContentsContainer extends React.Component {
   constructor(props) {
     super(props);
 

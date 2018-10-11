@@ -54,19 +54,19 @@ class Content extends React.Component {
   }
 
   componentDidMount() {
-      fetch("https://en.wikipedia.org/api/rest_v1/page/mobile-sections/Rachel_Carson").then((response) => {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
+    fetch("https://en.wikipedia.org/api/rest_v1/page/mobile-sections/Rachel_Carson").then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
 
-        return response.json();
-      }).then((data) => {
-        this.buildText(data);
-      }).catch((e) => {
-        this.setState({
-          error: e.message
-        });
+      return response.json();
+    }).then((data) => {
+      this.buildText(data);
+    }).catch((e) => {
+      this.setState({
+        error: e.message
       });
+    });
   }
 
   render () {
