@@ -6,20 +6,20 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: devMode ? 'development' : 'production',
-  entry: './src/react-toc.js',
+  entry: path.resolve(__dirname, 'src/demo/src/demo.js'),
   watch: devMode,
-  devServer: devMode ? {
-      contentBase: path.resolve(__dirname, 'dist'),
-      compress: true,
-      open: true
-    } : {},
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'react-toc.min.js'
+    path: path.resolve(__dirname, 'src/demo/dist'),
+    filename: 'demo.min.js'
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "react-toc.min.css"
+      filename: "demo.min.css"
     })
   ],
   module: {
@@ -39,7 +39,10 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       use: {
-        loader: "babel-loader"
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'react']
+        }
       }
     }]
   }
