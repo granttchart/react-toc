@@ -6,15 +6,10 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: devMode ? 'development' : 'production',
-  entry: path.resolve(__dirname, 'src/demo/src/demo.js'),
+  entry: path.resolve(__dirname, 'demo.js'),
   watch: devMode,
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000
-  },
   output: {
-    path: path.resolve(__dirname, 'src/demo/dist'),
+    path: path.resolve(__dirname, 'dist/'),
     filename: 'demo.min.js'
   },
   plugins: [

@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-import TableOfContents from "../../table-of-contents.js";
-import TableOfContentsContainer from "../../table-of-contents-container.js";
+import TableOfContents from "../table-of-contents.js";
+import TableOfContentsContainer from "../table-of-contents-container.js";
 import './demo.less';
 
 /*
