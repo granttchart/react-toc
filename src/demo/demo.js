@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-import TableOfContents from "../table-of-contents.js";
 import TableOfContentsContainer from "../table-of-contents-container.js";
 import './demo.less';
 
@@ -20,7 +19,9 @@ const LoadingWidget = () => {
   );
 }
 
-const RawHTML = (props) => <span dangerouslySetInnerHTML={{__html: props.html}}></span>;
+const RawHTML = (props) => {
+  return <span dangerouslySetInnerHTML={{__html: props.html}}></span>;
+}
 
 class Content extends React.Component {
   constructor(props) {

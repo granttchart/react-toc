@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
+import TableOfContents from "./table-of-contents.js";
+
 export class TableOfContentsContainer extends React.Component {
   constructor(props) {
     super(props);
